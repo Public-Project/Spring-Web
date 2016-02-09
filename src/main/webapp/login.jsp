@@ -13,11 +13,11 @@
 				style="width: 600px; height: 400px; margin: 0 auto; background-color: #e5f2ff">
 				<div id="inner" style="width: 300px; padding: 120px 0 0 0px; margin: 0 auto;">
 					User Name : <input type="text" id="username" size="20" name ="userName"
-						style="float: right" /></br>
-					</br> Password : <input type="password" id="password" size="20" name="password"
-						style="float: right" /></br>
-					</br> <input type="submit" value="Login"  
-						style="border: none;margin-left: 128px; border-radius: 5px; height: 30px; width: 63px; color: #ffffff; font-weight: 800; background-color: #3399ff;" /></br>
+						style="float: right" /><br>
+					<br> Password : <input type="password" id="password" size="20" name="password"
+						style="float: right" /><br>
+					<br> <input type="submit" value="Login"  
+						style="border: none;margin-left: 128px; border-radius: 5px; height: 30px; width: 63px; color: #ffffff; font-weight: 800; background-color: #3399ff;" /><br>
 				</div>
 			</div>
 		</form>

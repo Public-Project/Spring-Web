@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Scan all classes in this path for spring specific annotations -->
+	<context:component-scan base-package="org.com" />
+	<mvc:annotation-driven />
+	<mvc:resources mapping="/assets/js/**" location="/assets/js/" />
+	<mvc:resources mapping="/assets/css/**" location="/assets/css/" />
+
+
+	<!-- <mvc:default-servlet-handler/> -->
+	<context:annotation-config />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<!-- Vierw resolver configuration -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 1- Hibernate configuration -->
+	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://127.0.0.1:3306/ECOSYSTEM?autoReconnect=true"
+		p:password="password" p:minPoolSize="10" p:maxPoolSize="30"
+		p:numHelperThreads="4" p:preferredTestQuery="select 1"
+		p:idleConnectionTestPeriod="3"></bean>
+
+	<!-- 2- Creating Session factory out of datasource -->
+
+	<bean id="sessionfactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="datasource" ref="datasource"></property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- Set below two properties to true for debug -->
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 3- creating transaction manager -->
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionfactory"></property>
+	</bean>
+
+</beans>

@@ -14,7 +14,7 @@
 			<div
 				style="width: 600px; height: 400px; margin: 0 auto; background-color: #e5f2ff">
 				<div id="inner" style="width: 300px; padding: 120px 0 0 0px; margin: 0 auto;">
-					User Name : <input type="text" id="username" size="20" name ="userName"
+					User Name  : <input type="text" id="username" size="20" name ="userName"
 						style="float: right" /><br>
 					<br> Password : <input type="password" id="password" size="20" name="password"
 						style="float: right" /><br>

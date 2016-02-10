@@ -3,6 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="assets/js/jquery_1.7.2.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 </head>
@@ -16,7 +18,7 @@
 						style="float: right" /><br>
 					<br> Password : <input type="password" id="password" size="20" name="password"
 						style="float: right" /><br>
-					<br> <input type="submit" value="Login"  
+					<br> <input type="submit" value="Login"  onclick="onclickSubmit()"
 						style="border: none;margin-left: 128px; border-radius: 5px; height: 30px; width: 63px; color: #ffffff; font-weight: 800; background-color: #3399ff;" /><br>
 				</div>
 			</div>

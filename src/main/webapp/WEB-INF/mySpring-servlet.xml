@@ -14,7 +14,9 @@
 	<!-- <mvc:resources mapping="/Spring-web/resources**" location="/resources/" 
 		/> -->
 	<mvc:annotation-driven />
-
+	
+	<mvc:resources mapping="/assets/js/**" location="/assets/js/" />
+	<mvc:resources mapping="/assets/css/**" location="/assets/css/" />
 	<!-- <mvc:default-servlet-handler/> -->
 	<context:annotation-config />
 	<bean

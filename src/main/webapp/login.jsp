@@ -59,13 +59,13 @@
 			var jsonObj={};
 			var userName=$("#username").val().trim();
 			var password=$("#password").val().trim();
-			jsonObj.userName=userName;
+			jsonObj.emailId=userName;
 			jsonObj.password=password;
 			$.ajax({
 				type:"POST",
-				url:"/login",
+				url:"login",
 				dataType:"json",
-				contentType:"appliation/json",
+				contentType:"application/json",
 				data:JSON.stringify(jsonObj),
 				success:function(){
 					alert("success");

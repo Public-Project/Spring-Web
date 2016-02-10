@@ -8,7 +8,8 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Scan all classes in this path for spring specific annotations -->
 	<context:component-scan base-package="org.com" />
@@ -35,8 +36,7 @@
 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
 		p:jdbcUrl="jdbc:mysql://127.0.0.1:3306/SPRING_WEB?autoReconnect=true"
-		p:user="root"
-		p:password="password" p:minPoolSize="2" p:maxPoolSize="30"
+		p:user="root" p:password="password" p:minPoolSize="2" p:maxPoolSize="30"
 		p:numHelperThreads="4" p:preferredTestQuery="select 1;"
 		p:idleConnectionTestPeriod="3"></bean>
 
@@ -65,5 +65,8 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+
+	<!-- Using Transaction Manager -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

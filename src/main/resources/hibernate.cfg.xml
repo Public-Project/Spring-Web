@@ -5,6 +5,6 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="org.com.model.user" />
+		<mapping class="org.com.model.User" />
 	</session-factory>
 </hibernate-configuration>

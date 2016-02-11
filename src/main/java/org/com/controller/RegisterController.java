@@ -5,6 +5,7 @@ import org.com.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -15,6 +16,7 @@ public class RegisterController {
 
 	ModelAndView mv = null;
 
+	@RequestMapping("/registerUser")
 	public ModelAndView registerUser(@ModelAttribute("registerUser") User user) {
 		mv = new ModelAndView();
 		try {

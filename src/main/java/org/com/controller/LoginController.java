@@ -1,24 +1,26 @@
 package org.com.controller;
 
+import java.util.Map;
+
+import org.com.model.User;
+import org.com.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
 
-	@RequestMapping("/login")
+	@Autowired
+	UserService userService;
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView login(@RequestParam("userName") String userName, @RequestParam("password") String password) {
-		ModelAndView mv = new ModelAndView();
-		if (userName.equals("rishabh") && password.equals("123")) {
-			mv.setViewName("home");
-		} else {
-			mv.addObject("error", "Invalid Credentials");
-		}
-		return mv;
+	public Map<String, Object> login(@RequestBody User user) {
+		return userService.checkSavedUsers(user.getEmailId(), user.getPassword());
 	}
 
 }

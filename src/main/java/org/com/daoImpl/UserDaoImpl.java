@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@SuppressWarnings("unchecked")
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
@@ -19,10 +20,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	@Transactional
 	public List<User> checkSavedUsers(String emailId, String password) {
-		Query query = sessionFactory.getCurrentSession().createQuery("from User where emailId=:emailId and password=:password");
+		Query query = sessionFactory.getCurrentSession()
+				.createQuery("from User where emailId=:emailId and password=:password");
 		query.setParameter("emailId", emailId);
 		query.setParameter("password", password);
-		List<User> userList= (List<User>)query.list();
+		List<User> userList = (List<User>) query.list();
 		return userList;
 	}
 

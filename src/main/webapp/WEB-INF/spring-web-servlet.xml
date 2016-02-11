@@ -36,16 +36,16 @@
 	</bean>
 
 	  <!-- 1- Hibernate configuration -->
-   <!--  <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
         p:jdbcUrl="jdbc:mysql://127.0.0.1:3306/SPRING_WEB?autoReconnect=true"
         p:user="root" p:password="password" p:minPoolSize="2" p:maxPoolSize="30"
         p:numHelperThreads="4" p:preferredTestQuery="select 1;"
-        p:idleConnectionTestPeriod="3"></bean> -->
+        p:idleConnectionTestPeriod="3"></bean>
 
     <!-- 2- Creating Session factory out of datasource -->
 
-    <!-- <bean id="sessionFactory"
+     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="datasource"></property>
         <property name="configLocation">
@@ -55,21 +55,22 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                Set below two properties to true for debug
+                <!-- Set below two properties to true for debug -->
                 <prop key="hibernate.format_sql">false</prop>
                 <prop key="hibernate.use_sql_comments">false</prop>
+                <!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
             </props>
         </property>
     </bean>
- -->
+
     <!-- 3- creating transaction manager -->
 
-    <!-- <bean id="transactionManager"
+    <bean id="transactionManager"
         class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
-    Using Transaction Manager
-    <tx:annotation-driven transaction-manager="transactionManager"/> -->
+	<!-- 4- Using Transaction Manager -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

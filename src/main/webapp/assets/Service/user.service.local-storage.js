@@ -46,7 +46,7 @@
 
             // simulate api call with $timeout
             $timeout(function () {
-                GetByUsername(user.username)
+                GetByUsername(user.emailId)
                     .then(function (duplicateUser) {
                         /*if (duplicateUser !== null) {
                             deferred.resolve({ success: false, message: 'Username "' + user.username + '" is already taken' });
@@ -60,7 +60,7 @@
                             // save to local storage
                             users.push(user);
                             setUsers(users);
-                             $http.post('/api/createUser', { firstname: user.firstName, lastname: user.lastName , username: user.username, password: user.password })
+                             $http.post('registerUser', { firstName: user.firstName, lastName: user.lastName , emailId: user.username, password: user.password })
                               .then(function successCallback(response) {
                                     if (response.success) {
                                             deferred.resolve({ success: true,message:response.message });

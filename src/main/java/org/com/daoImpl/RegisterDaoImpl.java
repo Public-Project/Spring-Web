@@ -5,6 +5,7 @@ import org.com.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class RegisterDaoImpl implements RegisterDao{
@@ -13,6 +14,7 @@ public class RegisterDaoImpl implements RegisterDao{
 	SessionFactory sessionFactory;
 
 	@Override
+	@Transactional
 	public int registerUser(User user) {
 		sessionFactory.getCurrentSession().save(user);
 		return user.getId();

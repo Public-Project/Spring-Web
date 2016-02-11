@@ -34,7 +34,7 @@
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            $http.post('/api/authenticate', { username: username, password: password })
+            $http.post('authenticate', { emailId: username, password: password })
               .then(function successCallback(response) {
 					if (response.success) {
                             response = { success: true };

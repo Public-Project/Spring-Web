@@ -21,9 +21,9 @@ public class RegisterServiceImpl implements RegisterService {
 	public Map<String, Object> registerUser(User user) {
 		mapReturn = new HashMap<>();
 		if(registerUserDao.registerUser(user) != 0){
-			mapReturn.put("status", "true");
+			mapReturn.put("status", true);
 		} else {
-			mapReturn.put("status", "false");
+			mapReturn.put("status", false);
 			mapReturn.put("reason", "User is not registered");
 		}
 		return mapReturn;

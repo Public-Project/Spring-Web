@@ -11,7 +11,7 @@
 		$routeProvider
 			.when('/', {
 				controller: 'HomeController',
-				templateUrl: 'assets/templates/home.html',
+				templateUrl: 'assets/templates/index.html',
 				controllerAs: 'vm'
 			})
 

@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+<head>
+<link href="/home/nitin/CerridAndroid/css/bootstrap.min.css" rel="stylesheet">
+<link href="/home/nitin/CerridAndroid/css/jquery-ui.css" rel="stylesheet">
+</head>
+
+<body>
+ <script src="assets/lib/jquery.js"></script>
+ <script src="assets/lib/jquery-ui.js"></script>
+ <script src="assets/lib/jquery.dataTables.js"></script> 
+ <script src="assets/lib/dataTables.bootstrap.js"></script> 
+ <script src="assets/lib/DT_bootstrap.js"></script> 
+<form id="androidForm">
+
+<div class="col-md-12">
+<img src="/home/nitin/Videos/home_1.jpg"height="500px" />
+</div>
+
+</form>
+</body>
+</html>

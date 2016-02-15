@@ -36,7 +36,7 @@
              ----------------------------------------------*/
             $http.post('authenticate', { emailId: username, password: password })
               .then(function successCallback(response) {
-					if (response.success) {
+					if (response.data.status) {
                             response = { success: true };
                         } else {
                             response = { success: false, message: 'Username or password is incorrect' };

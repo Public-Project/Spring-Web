@@ -5,13 +5,21 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Login</title>
+	<title>Welcome to PaintaGun</title>
    	<script src="assets/js/jQuery-2.1.4.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/icheck.min.js"></script>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/AdminLTE.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/lib/jquery.prettyPhoto.js"></script>
+    <script src="assets/lib/jquery.isotope.min.js"></script>
+    <script src="assets/lib/main.js"></script>
+    <script src="assets/lib/wow.min.js"></script>
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<!-- Ionicons -->
@@ -21,12 +29,12 @@
 </head>
 
 
-<body style="background-image: url('assets/css/images/bg.jpg');">
+<body style="">
 
-    <div class="jumbotron">
+    <div class="">
         <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div class="">
+                <div style="margin:30px" ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div ng-view></div>
             </div>
         </div>
@@ -45,13 +53,13 @@
     <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
     <script src="assets/js/app.js"></script>
      <script>
-            $(function () {
+            /*$(function () {
                 $('input').iCheck({
                     checkboxClass: 'icheckbox_square-blue',
                     radioClass: 'iradio_square-blue',
                     increaseArea: '20%' // optional
                 });
-            });
+            });*/
         </script>
     
 <!--load the controller -->
@@ -62,6 +70,7 @@
 	
 	<script src="assets/Controller/login.controller.js"></script>
 	<script src="assets/Controller/register.controller.js"></script>
+    <script src="assets/Controller/home.controller.js"></script>
   
 
    

@@ -19,6 +19,9 @@
 	<mvc:resources mapping="/assets/templates/**" location="/assets/templates/" />
 	<mvc:resources mapping="/assets/Controller/**" location="/assets/Controller/" />
 	<mvc:resources mapping="/assets/Service/**" location="/assets/Service/" />
+	<mvc:resources mapping="/assets/fonts/**" location="/assets/fonts/" />
+	<mvc:resources mapping="/assets/images/**" location="/assets/images/" />
+	<mvc:resources mapping="/assets/lib/**" location="/assets/lib/" />
 
 
 	<!-- <mvc:default-servlet-handler/> -->

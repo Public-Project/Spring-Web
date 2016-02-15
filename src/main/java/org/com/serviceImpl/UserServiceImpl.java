@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
 	public Map<String, Object> checkSavedUsers(String emailId, String password) {
 		mapReturn = new HashMap<>();
 		if (!userDao.checkSavedUsers(emailId,password).isEmpty()) {
-			mapReturn.put("status", "true");
+			mapReturn.put("status", true);
 		} else {
-			mapReturn.put("status", "false");
+			mapReturn.put("status", false);
 			mapReturn.put("reason", "User is not registered");
 		}
 		return mapReturn;

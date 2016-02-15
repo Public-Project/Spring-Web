@@ -62,13 +62,13 @@
                             setUsers(users);
                              $http.post('registerUser', { firstName: user.firstName, lastName: user.lastName , emailId: user.username, password: user.password })
                               .then(function successCallback(response) {
-                                    if (response.success) {
-                                            deferred.resolve({ success: true,message:response.message });
+                                    if (response.data.status) {
+                                            deferred.resolve({ success: true,message:"Registration Succesful" });
                                         } else {
-                                            deferred.resolve({ success: false,message:response.message });
+                                            deferred.resolve({ success: false,message:"Registration failed due to some error" });
                                         }
                                 }, function errorCallback(response) {
-                                    deferred.resolve({ success: false,message:"Register failed due to some error" });
+                                    deferred.resolve({ success: false,message:"Registration failed due to some error" });
                                });
 
 

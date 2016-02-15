@@ -21,12 +21,25 @@
 	</build>
 
 	<dependencies>
-	<!-- Spring Related Dependencies -->
+		<!-- Spring Related Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>4.0.0.RELEASE</version>
 		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -82,9 +95,9 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.0.0.RELEASE</version>
 		</dependency>
-		
-		
-	<!-- Hibernate related dependencies -->
+
+
+		<!-- Hibernate related dependencies -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -140,9 +153,9 @@
 			<artifactId>persistence-api</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-		
-	<!-- Adding jackson for json support -->
-			<dependency>
+
+		<!-- Adding jackson for json support -->
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
 			<version>2.4.1</version>

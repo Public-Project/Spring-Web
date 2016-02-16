@@ -17,7 +17,12 @@ public class AppConstants {
 	public final static String MAIL_SMTP_AUTH_VAL = "true";
 	public final static String MAIL_TRANSPORT_PROTOCOL_VAL = "smtp";
 
-	public final static String USER_NAME = "projectbay.rishabh@gmail.com";
-	public final static String PASSWORD = "github123";
+	public final static String USER_NAME = "paintagun@gmail.com";
+	public final static String PASSWORD = "paintagun123";
+	
+	public final static String STATUS = "status";
+	public final static String REASON = "reason";
+	
+	public final static String ACTIVATION_MAIL = "Hi <br> Please click localhost:8083/PaintaGun/activation?activation_id=";
 
 }

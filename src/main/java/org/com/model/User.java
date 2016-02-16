@@ -10,25 +10,31 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USER")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name="first_name")
+	@Column(name = "first_name")
 	private String firstName;
-	
-	@Column(name="last_name")
+
+	@Column(name = "last_name")
 	private String lastName;
-	
-	@Column(name="password")
+
+	@Column(name = "password")
 	private String password;
-	
-	@Column(name="email_id")
+
+	@Column(name = "email_id")
 	private String emailId;
-	
-	@Column(name="phone_no")
+
+	@Column(name = "phone_no")
 	private int phoneNo;
+
+	@Column(name = "activated")
+	private boolean isActivated;
+
+	@Column(name = "registered")
+	private boolean isRegistered;
 
 	public int getId() {
 		return id;
@@ -77,5 +83,23 @@ public class User {
 	public void setPhoneNo(int phoneNo) {
 		this.phoneNo = phoneNo;
 	}
+
+	public boolean isActivated() {
+		return isActivated;
+	}
+
+	public void setActivated(boolean isActivated) {
+		this.isActivated = isActivated;
+	}
+
+	public boolean isRegistered() {
+		return isRegistered;
+	}
+
+	public void setRegistered(boolean isRegistered) {
+		this.isRegistered = isRegistered;
+	}
+
+
 
 }

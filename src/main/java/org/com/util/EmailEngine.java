@@ -15,7 +15,7 @@ import org.com.constants.AppConstants;
 
 public class EmailEngine {
 
-	public static void sendMail() {
+	public static void sendMail(String to, String emailMessage) {
 
 		// Get a Properties object
 		Properties props = System.getProperties();
@@ -26,7 +26,7 @@ public class EmailEngine {
 		props.setProperty(AppConstants.MAIL_SMTP_PORT, AppConstants.MAIL_SMTP_PORT_VAL);
 		props.setProperty(AppConstants.MAIL_SMTP_SOCKETFACTORY_PORT, AppConstants.MAIL_SMTP_PORT_VAL);
 		props.put(AppConstants.MAIL_SMTP_AUTH, AppConstants.MAIL_SMTP_AUTH_VAL);
-		 props.put("mail.debug", "true");
+		props.put("mail.debug", "true");
 		props.put(AppConstants.MAIL_TRANSPORT_PROTOCOL, AppConstants.MAIL_TRANSPORT_PROTOCOL);
 		// props.put("mail.transport.protocol", "smtp");
 		final String username = AppConstants.USER_NAME;//
@@ -41,11 +41,10 @@ public class EmailEngine {
 			// compose the message
 			try {
 				MimeMessage message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("rishabhprasher@gmail.com"));
-				message.addRecipient(Message.RecipientType.TO,
-						new InternetAddress("rishabh.prashar@cerridsolutions.com"));
-				message.setSubject("Ping");
-				message.setText("Hello, this is example of sending email  ");
+				message.setFrom(new InternetAddress(AppConstants.USER_NAME));
+				message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+				message.setSubject("Paintagun Verification");
+				message.setText(emailMessage);
 
 				// Send message
 				Transport.send(message);
@@ -58,10 +57,6 @@ public class EmailEngine {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) {
-		EmailEngine.sendMail();
 	}
 
 }

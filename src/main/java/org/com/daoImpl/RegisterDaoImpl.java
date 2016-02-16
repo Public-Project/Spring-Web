@@ -8,25 +8,23 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class RegisterDaoImpl implements RegisterDao{
-	
+public class RegisterDaoImpl implements RegisterDao {
+
 	@Autowired
 	SessionFactory sessionFactory;
 
 	@Override
 	@Transactional
 	public int registerUser(User user) {
+		user.setRegistered(true);
 		sessionFactory.getCurrentSession().save(user);
 		return user.getId();
 	}
 
 	@Override
 	public void unregisterUser(User user) {
-		// TODO Auto-generated method stub
-		
+		user.setRegistered(false);
+		sessionFactory.getCurrentSession().save(user);
 	}
-	
-	
-	
 
 }

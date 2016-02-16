@@ -7,21 +7,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Welcome to PaintaGun</title>
    	<script src="assets/js/jQuery-2.1.4.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/lib/bootstrap.min.js"></script>
 	<script src="assets/js/icheck.min.js"></script>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/AdminLTE.min.css">
+	<!-- <link rel="stylesheet" href="assets/css/AdminLTE.min.css"> -->
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/lib/jquery.prettyPhoto.js"></script>
     <script src="assets/lib/jquery.isotope.min.js"></script>
     <script src="assets/lib/main.js"></script>
     <script src="assets/lib/wow.min.js"></script>
+    <script src="assets/lib/jquery.js"></script>
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
@@ -32,7 +33,7 @@
 <body style="">
 
     <div class="">
-        <div class="container">
+        <div class="">
             <div class="">
                 <div style="margin:30px" ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div ng-view></div>

@@ -1,8 +1,5 @@
 package org.com.logging;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class SpringException extends Exception {
 
 	private static final long serialVersionUID = 1L;

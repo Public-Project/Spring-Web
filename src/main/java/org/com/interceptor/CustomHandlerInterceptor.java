@@ -13,10 +13,15 @@ public class CustomHandlerInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("interceo[i");
-		if (!request.getRequestURI().equals("/Spring-Web/") && !request.getRequestURI().equals("/Spring-Web")
+		if (!request.getRequestURI().equals("/PaintaGun/") && !request.getRequestURI().equals("/PaintaGun")
 				&& !request.getRequestURI().equals("/")) {
-			ModelAndView mv = new ModelAndView("sessionExpire");
+			ModelAndView mv = new ModelAndView("login");
+			request.getSession();
+			ModelAndViewDefiningException mvde = new ModelAndViewDefiningException(mv);
+			throw mvde;
+		}else if(!request.getRequestURI().equals("/logout/")){
+			request.getSession().invalidate();
+			ModelAndView mv = new ModelAndView("login");
 			ModelAndViewDefiningException mvde = new ModelAndViewDefiningException(mv);
 			throw mvde;
 		}

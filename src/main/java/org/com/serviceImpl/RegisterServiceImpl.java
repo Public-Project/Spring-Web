@@ -17,6 +17,9 @@ public class RegisterServiceImpl implements RegisterService {
 	@Autowired
 	RegisterDao registerUserDao;
 
+	@Autowired
+	EmailEngine mailer;
+
 	Map<String, Object> mapReturn = null;
 
 	@Override
@@ -25,7 +28,8 @@ public class RegisterServiceImpl implements RegisterService {
 		int userId = registerUserDao.registerUser(user);
 		if (userId != 0) {
 			mapReturn.put(AppConstants.STATUS, true);
-			EmailEngine.sendMail(user.getEmailId(), AppConstants.ACTIVATION_MAIL + userId);
+			mailer.sendMail(user.getEmailId(),
+					AppConstants.ACTIVATION_MAIL_HEAD + userId + AppConstants.ACTIVATION_MAIL_TAIL);
 		} else {
 			mapReturn.put(AppConstants.STATUS, false);
 			mapReturn.put(AppConstants.REASON, "Unable to registered");

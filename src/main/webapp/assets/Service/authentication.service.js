@@ -43,7 +43,7 @@
                         }
                    callback(response);
                  }, function errorCallback(response) {
-                 	alert("Api Call failed")
+                 	alert("Error due to some error")
                });
 
         }

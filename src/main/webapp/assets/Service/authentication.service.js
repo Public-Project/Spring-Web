@@ -50,8 +50,9 @@
 		}
 
         function setPassword(password, confirmPassword, callback) {
-			 $http.post('setpassword', { password: password, confirmPassword: confirmPassword })
-              .then(function successCallback(response) {
+        		var activationId=$(location).attr('href').split("/")[$(location).attr('href').split("/").length-1];
+			 	$http.post('activateUser', { password: password, id: activationId })
+             	.then(function successCallback(response) {
 					if (response.data.status) {
                             response = { success: true };
                         } else {

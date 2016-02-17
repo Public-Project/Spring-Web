@@ -6,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Welcome to PaintaGun</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/images/logo.jpg" />
    	<script src="assets/js/jQuery-2.1.4.min.js"></script>
 	<script src="assets/lib/bootstrap.min.js"></script>
 	<script src="assets/js/icheck.min.js"></script>

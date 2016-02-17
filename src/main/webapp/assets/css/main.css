@@ -2581,3 +2581,9 @@ shortcodes page css
   text-align: center;
   padding: 0 20px 20px 20px;
 }
+.logout{
+  float: right;
+}
+.logout a{
+  color: #fff !important;
+}

@@ -23,7 +23,7 @@ public class AppConstants {
 	public final static String STATUS = "status";
 	public final static String REASON = "reason";
 	
-	public final static String ACTIVATION_MAIL_HEAD = "Hi <br> Please click <a href='http://localhost:8083/PaintaGun/redirectActivation?activation_id=";
+	public final static String ACTIVATION_MAIL_HEAD = "Hi <br> Please click <a href='http://localhost:8083/PaintaGun/#/redirectActivation/activation_id/";
 	public final static String ACTIVATION_MAIL_TAIL = "'>here</a>, to activate your account";
 
 }

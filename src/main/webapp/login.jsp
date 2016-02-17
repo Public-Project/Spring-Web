@@ -72,6 +72,8 @@
 	<script src="assets/Controller/login.controller.js"></script>
 	<script src="assets/Controller/register.controller.js"></script>
     <script src="assets/Controller/home.controller.js"></script>
+     <script src="assets/Controller/setpassword.controller.js"></script>
+     <script src="assets/Directive/angulardirective.js"></script>
   
 
    

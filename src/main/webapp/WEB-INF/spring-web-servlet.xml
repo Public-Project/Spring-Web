@@ -22,6 +22,7 @@
 	<mvc:resources mapping="/assets/fonts/**" location="/assets/fonts/" />
 	<mvc:resources mapping="/assets/images/**" location="/assets/images/" />
 	<mvc:resources mapping="/assets/lib/**" location="/assets/lib/" />
+	<mvc:resources mapping="/assets/Directive/**" location="/assets/Directive/" />
 
 
 	<!-- <mvc:default-servlet-handler/> -->

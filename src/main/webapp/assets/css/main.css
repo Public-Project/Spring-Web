@@ -409,7 +409,7 @@ input.search-form:hover {
   position: absolute;
   width: 100%;
   display: block !important;
-  height: 730px;
+  /*height: 730px;*/
   -webkit-transition: opacity ease-in-out 500ms;
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
@@ -438,13 +438,16 @@ input.search-form:hover {
   color: #fff;
   display: inline-block;
   margin-top: -25px;
-  height: 40px;
-  line-height: 40px;
+  /*height: 40px;*/
   width: 40px;
-  line-height: 40px;
+  /*line-height: 40px;*/
   text-align: center;
   border-radius: 4px;
   z-index: 5;
+}
+#main-slider .prev .fa,
+#main-slider .next .fa{
+  line-height: 40px;
 }
 
 #main-slider .prev:hover,
@@ -460,7 +463,7 @@ input.search-form:hover {
   right: 10px;
 }
 
-#main-slider .carousel-indicators li {
+ .carousel-indicators li {
   width: 20px;
   height: 20px;
   background-color: #fff;
@@ -468,7 +471,7 @@ input.search-form:hover {
   position: relative;
 }
 
-#main-slider .carousel-indicators li:after {
+ .carousel-indicators li:after {
   position: absolute;
   content: "";
   width: 24px;
@@ -480,7 +483,7 @@ input.search-form:hover {
   top: -3px;
 }
 
-#main-slider .carousel-indicators .active{
+ .carousel-indicators .active{
   width: 20px;
   height: 20px;
   background-color: #c52d2f;
@@ -489,7 +492,7 @@ input.search-form:hover {
    position: relative;
 }
 
-#main-slider .carousel-indicators .active:after {
+ .carousel-indicators .active:after {
   position: absolute;
   content: "";
   width: 24px;
@@ -1185,6 +1188,7 @@ a.accordion-toggle  i{
   border: 1px solid #ddd;
   padding: 15px;
   position: relative;
+  margin-bottom: 5px;
 }
 
 .media_image {
@@ -1357,14 +1361,14 @@ ul.social_icons li  a i{
   margin-left: -32px;
 }
 
-.team .single-profile-top:before, 
+/*.team .single-profile-top:before, 
 .team .single-profile-top:after {
   content: "";
   position: absolute;
   width: 0;
   height: 0;
   border-style: solid;
-}
+}*/
 
 .team .single-profile-top:before {
   left:26px;
@@ -2586,4 +2590,21 @@ shortcodes page css
 }
 .logout a{
   color: #fff !important;
+}
+#slides_control > div{
+  height: 595px;
+}
+/*img{
+  margin:auto;
+  width: 400px;
+}*/
+#slides_control {
+  /*position:absolute;*/
+  width: 100%;
+  /*left:50%;
+  top:20px;
+ margin-left:-200px;*/
+}
+.media-object{
+  width: 95px;
 }

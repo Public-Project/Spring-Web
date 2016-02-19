@@ -7,5 +7,7 @@ public interface RegisterDao {
 	public int registerUser(User user);
 
 	public void unregisterUser(User user);
+	
+	public int activateUser(User user);
 
 }

@@ -34,5 +34,11 @@ public class RegisterUserController {
 		mv.setViewName("resetPassword");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/activateUser", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String, Object> activateUser(@RequestBody User user) {
+		return registerService.activateUser(user);
+	}
 
 }

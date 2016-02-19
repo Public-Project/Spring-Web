@@ -27,4 +27,14 @@ public class RegisterDaoImpl implements RegisterDao {
 		sessionFactory.getCurrentSession().save(user);
 	}
 
+	@Override
+	@Transactional
+	public int activateUser(User user) {
+		User savedUser = (User) sessionFactory.getCurrentSession().get(User.class, user.getId());
+		savedUser.setPassword(user.getPassword());
+		user.setActivated(true);
+		sessionFactory.getCurrentSession().update(savedUser);
+		return user.getId();
+	}
+
 }

@@ -37,4 +37,19 @@ public class RegisterServiceImpl implements RegisterService {
 		return mapReturn;
 	}
 
+	@Override
+	public Map<String, Object> activateUser(User user) {
+		mapReturn = new HashMap<>();
+		int userId = registerUserDao.activateUser(user);
+		if (userId != 0) {
+			mapReturn.put(AppConstants.STATUS, true);
+			mailer.sendMail(user.getEmailId(),
+					AppConstants.ACTIVATION_MAIL_HEAD + userId + AppConstants.ACTIVATION_MAIL_TAIL);
+		} else {
+			mapReturn.put(AppConstants.STATUS, false);
+			mapReturn.put(AppConstants.REASON, "Unable to registered");
+		}
+		return mapReturn;
+	}
+
 }

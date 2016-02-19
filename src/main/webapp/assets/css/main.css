@@ -8,7 +8,7 @@
 body {
   background: #591616;
   font-family: 'Open Sans', sans-serif;
-  color:#4e4e4e;
+  color:#E2A3A3;
   line-height: 22px;
 }
 
@@ -20,7 +20,7 @@ h5,
 h6 {
   font-weight: 600; 
   font-family: 'Open Sans', sans-serif;
-  color:#4e4e4e;
+  color:#E1C29D;
 }
 
 h1{
@@ -67,7 +67,7 @@ hr {
   color: #fff;
   border-radius: 4px;
   border:none;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -2607,4 +2607,7 @@ shortcodes page css
 }
 .media-object{
   width: 95px;
+}
+address{
+  color: black;
 }

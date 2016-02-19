@@ -5,16 +5,16 @@
 		.module('app')
 		.controller('HomeController', HomeController);
  
-	HomeController.$inject = ['$location','$scope','pageInfo', 'AuthenticationService', 'FlashService'];
+	HomeController.$inject = ['$location','$scope','activepageInfo', 'AuthenticationService', 'FlashService'];
 	/*function HomeController($location, AuthenticationService, FlashService) {
 		var vm = this;
  
 		
 	}*/
-	function HomeController($location,$scope,pageInfo){
+	function HomeController($location,$scope,activepageInfo){
   		$scope.myInterval = 3000;
 
-  		pageInfo.name = '';
+  		activepageInfo.name = '';
   		/*$scope.getClassNitin = function (path) {
 		  if ($location.path().substr(0, path.length) === path) {
 		    return 'active';
@@ -22,7 +22,7 @@
 		    return '';
 		  }
 		}*/
-  		/*$scope.slides = [{
+  		$scope.slides = [{
 				image: 'http://lorempixel.com/400/200/'
 			},
 			{
@@ -34,7 +34,7 @@
 			{
 				image: 'http://lorempixel.com/400/200/people'
 			}
-		];*/
+		];
 	}
 	/*angular.module("app").directive("activeTab",[function(){
 		return{

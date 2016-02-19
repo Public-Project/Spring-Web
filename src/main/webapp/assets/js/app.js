@@ -36,9 +36,24 @@
 				templateUrl: 'assets/templates/about-us.html',
 				controllerAs: 'vm'
 			})
+			.when('/upload', {
+				controller: 'uploadController',
+				templateUrl: 'assets/templates/uploadPainting.html',
+				controllerAs: 'vm'
+			})
+			.when('/buy', {
+				controller: 'buyController',
+				templateUrl: 'assets/templates/shortcodes.html',
+				controllerAs: 'vm'
+			})
+			.when('/contacts', {
+				controller: 'contactsController',
+				templateUrl: 'assets/templates/contact-us.html',
+				controllerAs: 'vm'
+			})
 			
 
-			.otherwise({ redirectTo: '/login' });
+			.otherwise({ redirectTo: '/' });
 	}
 
 	run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];

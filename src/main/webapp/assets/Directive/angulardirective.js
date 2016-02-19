@@ -26,16 +26,16 @@
 		return{
 			restrict:"A",
 			scope:{},
-			controller:['$scope','pageInfo',function($scope,pageInfo){
+			controller:['$scope','activepageInfo',function($scope,activepageInfo){
 
-				$scope.pageInfo = pageInfo;
+				$scope.activepageInfo = activepageInfo;
 
 			}],
 			link:function(scope,element,attrs,controllersArr){
 
 				//var route=location.hash.split("/")[location.hash.split("/").length-1];
-				scope.$watch('pageInfo.name',function(){
-					if(element.attr("name")==scope.pageInfo.name){
+				scope.$watch('activepageInfo.name',function(){
+					if(element.attr("name")==scope.activepageInfo.name){
 						element.addClass("active");
 					}else{
 						element.removeClass("active");
@@ -47,7 +47,7 @@
 
 	}]);
 
-	angular.module('app').factory('pageInfo',[function(){
+	angular.module('app').factory('activepageInfo',[function(){
 		return {
 			name:''
 		}

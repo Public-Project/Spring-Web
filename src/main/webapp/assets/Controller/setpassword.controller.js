@@ -10,10 +10,10 @@
 		vm.setpassword = setpassword;
  		function setpassword() {
 			vm.dataLoading = true;
-			AuthenticationService.setPassword(vm.password,vm.confirmpassword)
-				.then(function (response) {
+			AuthenticationService.setPassword(vm.password,vm.confirmpassword
+				,function (response) {
 					if (response.success) {
-						FlashService.Success(response.message, true);
+						//FlashService.Success(response.message, true);
 						$location.path('/login');
 					} else {
 						FlashService.Error(response.message);
@@ -37,8 +37,7 @@
 						ctrl.$setValidity('pwmatch', v);
 					});
 				});
-			}/*,
-			controller:"setPasswordController"*/
+			}
 		}
 	}])
 })();

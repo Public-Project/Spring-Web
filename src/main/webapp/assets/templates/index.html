@@ -1,18 +1,6 @@
 
 	<section  >
-		<div ng-controller="HomeController" id="slides_control" ng-init="slides=[{
-				image: 'assets/images/slider/color1.jpg'
-			},
-			{
-				image: 'assets/images/slider/color2.jpg'
-			},
-			{
-				image: 'assets/images/slider/color1.jpg'
-			},
-			{
-				image: 'assets/images/slider/color2.jpg'
-			}
-		]">
+		<div ng-controller="HomeController" id="slides_control">
 			<carousel interval="myInterval">
 				<slide ng-repeat="slide in slides" active="slide.active">
 					<img ng-src="{{slide.image}}">
